@@ -33,6 +33,12 @@ class MachineLearningWorker(Worker):
 
         :param load_model: A callable function which loads and returns the model.
         """
+        if load_model is None:
+            raise ValueError("Load model function cannot be None.")
+
+        if not callable(load_model):
+            raise ValueError("Load model function must be callable.")
+
         with MachineLearningWorker._MODEL_LOCK:
             self._logger.debug(f"Starting to load model for {self.__class__.__name__}.")
 
@@ -51,6 +57,12 @@ class MachineLearningWorker(Worker):
 
         :param unload_model: A callable function which unloads the model.
         """
+        if unload_model is None:
+            raise ValueError("Unload model function cannot be None.")
+
+        if not callable(unload_model):
+            raise ValueError("Unload model function must be callable.")
+
         with MachineLearningWorker._MODEL_LOCK:
             self._logger.debug(f"Starting to unload model for {self.__class__.__name__}")
 
