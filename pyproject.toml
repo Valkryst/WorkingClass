@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+authors = [
+    {name = "Valkryst"}
+]
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+]
+description = ""
+dynamic=["readme"]
+maintainers = [
+    {name = "Valkryst"}
+]
+name="working_class"
+requires-python=">=3.8"
+version = "0.0.0"
+
+[tool.setuptools.dynamic]
+readme = {file = ["README.md"]}
+
+[urls]
+Repository = "https://github.com/Valkryst/WorkingClass.git"
+Issues = "https://github.com/Valkryst/WorkingClass/issues"

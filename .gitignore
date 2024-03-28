@@ -1,0 +1,4 @@
+.idea
+.venv
+dist
+src/working_class.egg-info
