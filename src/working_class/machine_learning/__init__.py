@@ -5,6 +5,13 @@ from typing import NoReturn
 
 
 class MachineLearningWorker(Worker):
+    """
+    Base class for a MachineLearningWorker.
+
+    A MachineLearningWorker is a thread-safe object which performs some work on a given input, using a machine learning
+    model. It may produce an output, but that is dependent on the implementation of the subclass.
+    """
+
     _MODEL = None
     """Model to be used by the MachineLearningWorker."""
     _MODEL_LOCK = threading.Lock()
